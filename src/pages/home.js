@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/recipes");
+        const res = await axios.get("https://recipe-project-shabeel.onrender.com/recipes");
         setRecipes(res.data);
       } catch (error) {
         console.log(error);
@@ -21,7 +21,7 @@ function Home() {
     const fetchSavedRecipes = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/ids/${userID}`
+          `https://recipe-project-shabeel.onrender.com/recipes/savedRecipes/ids/${userID}`
         );
         setSavedRecipes(res.data.savedRecipes);
       } catch (error) {
@@ -34,7 +34,7 @@ function Home() {
 
   const saveRecipe = async (recipeID) => {
     try {
-      const res = await axios.put("http://localhost:3001/recipes", {
+      const res = await axios.put("https://recipe-project-shabeel.onrender.com/recipes", {
         userID,
         recipeID,
       }, {headers: {authorization: cookies.access_token}});

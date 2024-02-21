@@ -10,7 +10,7 @@ function SavedRecipes() {
     const fetchSavedRecipes = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/${userID}`
+          `https://recipe-project-shabeel.onrender.com/recipes/savedRecipes/${userID}`
         );
         setSavedRecipes(res.data.savedRecipes);
       } catch (error) {
