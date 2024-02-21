@@ -8,6 +8,7 @@ function Home() {
   const [recipes, setRecipes] = useState([]);
   const [savedRecipes, setSavedRecipes] = useState([]);
   const [cookies, _] = useCookies(["access_token"]);
+  console.log(_);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -30,7 +31,7 @@ function Home() {
     };
     fetchRecipes();
     if (cookies.access_token) fetchSavedRecipes();
-  }, [userID]);
+  }, [userID, cookies.access_token]);
 
   const saveRecipe = async (recipeID) => {
     try {

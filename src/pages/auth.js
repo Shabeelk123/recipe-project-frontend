@@ -18,6 +18,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [_, setCookies] = useCookies(["access_token"]);
+  console.log(_);
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {

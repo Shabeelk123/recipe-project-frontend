@@ -16,6 +16,7 @@ function CreateRecipe() {
     userOwner: userID,
   });
   const [cookies, _] = useCookies(["access_token"]);
+  console.log(_);
 
   const handleChange = (e) => {
     setRecipe({ ...recipe, [e.target.name]: e.target.value });
